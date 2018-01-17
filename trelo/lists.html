@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+
+    <title>Trelo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+
+   <body class="hasLogin">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>        
+          <a class="navbar-brand" href="index.html">Trelo</a>
+        </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">                             
+                    <li><a id="encerrarSessao" href="#">Encerrar sessão</a></li>                       
+            </ul>
+          </div>                 
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    
+    <div class="container container-principal">
+      <div id="container-principal" class="row">
+        <div id="listasUsuario"></div>
+        <div class="col-xs-12 col-md-4 col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">              
+              <div class="input-group">
+                <input id="nomeLista" type="text" class="form-control" placeholder="Nova Lista">
+                <span class="input-group-btn">
+                  <button id="criarLista" class="btn btn-default" type="button">+</button>
+                </span>
+              </div><!-- /input-group -->              
+            </div>           
+          </div>  
+        </div>
+      </div>
+    </div>
+
+      
+  <div class="modal fade" id="modalCard" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="tituloCard" class="modal-title"></h4>
+        </div>
+        <div class="modal-body"> 
+          <div id="comentarios" class="list-group">                                              
+          </div>         
+                         
+          <textarea id="textoComentario" class="form-control"></textarea>           
+                          
+          <button class="btn btn-success" id="novoComentario" type="button">Salvar</button>
+                                                              
+        </div>
+        <div class="modal-footer">
+           <div class="col-md-2 col-xs-2">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Tags
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="tags">              
+                </ul>
+              </div> 
+            </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+<script src="scripts.js"></script>
+<script type="text/javascript">
+
+  window.addEventListener('load', function() {    
+   var url = " http://www.henriquesantos.pro.br:8080/api/trello/lists/"+localStorage.getItem("token")+"/board/"+sessionStorage.getItem("board");
+     read(url,showLists);
+  });
+
+</script>

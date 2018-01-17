@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+
+    <title>Trelo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Trelo</a>
+        </div>        
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="registrar.html">Cadastrar</a></li>            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    <div class="container">
+     
+      <form class="form-signin" id="formLogin">
+        <div class="alert alert-danger" role="alert" id="msg"></div>
+        <h2 class="form-signin-heading">Login</h2>
+        <label for="inputEmail" class="sr-only">User</label>
+        <input id="username" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" name="senha" class="sr-only">Senha</label>
+        <input type="password" id="senha" class="form-control" placeholder="Password" required>       
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+<script src="scripts.js"></script>
+<script type="text/javascript">
+
+      //   function conexao(data,url){
+          
+      //       var xhttp = new XMLHttpRequest();
+      //       xhttp.onreadystatechange = function()
+      //       {
+      //            if (this.readyState == 4 && this.status == 200)
+      //             {                                                           
+      //               var obj_conexao = JSON.parse(this.responseText);                                                           
+      //               getRetorno(obj_conexao);                   
+      //             }
+      //       };
+
+      //      xhttp.open("POST", url, true);
+      //      xhttp.setRequestHeader("Content-type", "application/json");            
+      //      xhttp.send(JSON.stringify(data));                                
+      //  };
+
+      // function getRetorno(data){
+                            
+      //     localStorage.setItem("token",data.token);                              
+      //     window.location.href = "index.html";
+        
+      // };
+      
+</script>
